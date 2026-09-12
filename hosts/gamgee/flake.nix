@@ -1,10 +1,11 @@
 {
   inputs,
   nixpkgs,
+  nixpkgs-unstable,
   pkgs-unstable,
   ...
 }:
-nixpkgs.lib.nixosSystem {
+nixpkgs-unstable.lib.nixosSystem {
   modules = [
     {
       nixpkgs.overlays = [

@@ -6,12 +6,13 @@
     ../../nixos/bluetooth.nix
     ../../nixos/fonts.nix
     ../../nixos/home-manager.nix
+    ../../nixos/llama-cpp.nix
     ../../nixos/nix.nix
+    ../../nixos/ssh.nix
     ../../nixos/systemd-boot.nix
     ../../nixos/tuigreet.nix
     ../../nixos/autologin.nix # Skip first TUIGreet login, use LUKS password to unlock the keyring
     ../../nixos/users.nix
-    ../../nixos/ssh.nix
     ../../nixos/utils.nix
     ../../nixos/hyprland.nix
     ../../nixos/steam.nix

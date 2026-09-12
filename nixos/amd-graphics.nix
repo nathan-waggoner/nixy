@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   # --- Graphics: AMD GPU (amdgpu + ROCm-friendly OpenCL/Vulkan) ---
   # Shared with the desktop, but the ROCm/HSA bits below exist specifically
   # for local AI inference (llama.cpp, Ollama, ComfyUI, etc.) on this card.
@@ -17,7 +19,7 @@
   # to initialize without a memory-allocation error on this GPU.
   environment.variables.HSA_OVERRIDE_GFX_VERSION = "10.3.0";
 
-  services.xserver.videoDrivers = [ "amdgpu" ];
+  services.xserver.videoDrivers = ["amdgpu"];
 
   environment.systemPackages = with pkgs; [
     rocmPackages.rocminfo
@@ -29,4 +31,3 @@
     libva-vdpau-driver
   ];
 }
-
