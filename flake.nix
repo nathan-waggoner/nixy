@@ -74,6 +74,7 @@
       inherit
         inputs
         nixpkgs
+        nixpkgs-unstable
         system
         pkgs-unstable
         pkgs

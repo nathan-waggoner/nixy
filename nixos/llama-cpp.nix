@@ -1,14 +1,28 @@
-{pkgs, ...}: {
-  services.llama-cpp.instances.default = {
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}: let
+  llama-cpp-rocm = pkgs.llama-cpp.override {rocmSupport = true;};
+  llama-server = lib.getExe' llama-cpp-rocm "llama-server";
+in {
+  services.llama-swap = {
     enable = true;
-    package = pkgs.llama-cpp.override {rocmSupport = true;};
-    hfRepo = "Qwen/Qwen2.5-Coder-7B-Instruct-GGUF";
-    hfFile = "qwen2.5-coder-7b-instruct-q5_k_m.gguf";
     settings = {
-      host = "127.0.0.1";
-      port = 8080;
-      ngl = 99; # Push processing entirely to your 6700 XT
-      ctx-size = 8192; # Give the agent enough room to read code files
+      healthCheckTimeout = 60;
+
+      models = {
+        "qwen2.5-7b" = {
+          cmd = ''
+            ${llama-server} --port ''${PORT} \
+              -hf-repo Qwen/Qwen2.5-Coder-7B-Instruct-GGUF \
+              -hf-file qwen2.5-coder-7b-instruct-q5_k_m.gguf \
+              -ngl 999 -c 8192 --host 0.0.0.0 --no-webui
+          '';
+          ttl = 300;
+        };
+      };
     };
   };
 }
