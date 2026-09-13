@@ -6,6 +6,7 @@
     ../../nixos/bluetooth.nix
     ../../nixos/fonts.nix
     ../../nixos/home-manager.nix
+    ../../nixos/jellyfin.nix
     ../../nixos/llama-cpp.nix
     ../../nixos/nix.nix
     ../../nixos/ssh.nix

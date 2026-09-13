@@ -6,6 +6,7 @@
 }: {
   home.packages = with pkgs; [
     proton-pass
+    protonvpn-gui
   ];
 
   # Fix Proton Authenticator desktop entry

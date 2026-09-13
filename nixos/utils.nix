@@ -15,6 +15,7 @@ in {
   networking = {
     hostName = hostname;
     networkmanager.enable = true;
+    firewall.checkReversePath = false;
   };
 
   systemd.services.NetworkManager-wait-online.enable = false;
@@ -102,6 +103,7 @@ in {
       btop
       unrar
       p7zip
+      transmission
     ];
   };
 
