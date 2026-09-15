@@ -15,9 +15,6 @@
     ../../server-modules/glance
     ../../server-modules/adguardhome.nix
     ../../server-modules/arr.nix
-    ../../server-modules/bentopdf.nix
-    ../../server-modules/cyberchef.nix
-    ../../server-modules/mazanoke.nix
     ../../nixos/kernel-hardening.nix
     ../../server-modules/fail2ban.nix
     ../../server-modules/default-creds.nix

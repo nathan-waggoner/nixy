@@ -103,7 +103,6 @@ in {
       btop
       unrar
       p7zip
-      transmission_4
     ];
   };
 

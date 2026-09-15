@@ -6,7 +6,6 @@
     ../../nixos/bluetooth.nix
     ../../nixos/fonts.nix
     ../../nixos/home-manager.nix
-    ../../nixos/jellyfin.nix
     ../../nixos/llama-cpp.nix
     ../../nixos/nix.nix
     ../../nixos/ssh.nix
@@ -19,6 +18,7 @@
     ../../nixos/hyprland.nix
     ../../nixos/steam.nix
     ../../nixos/kernel-hardening.nix
+    ../../server-modules/arr.nix
     ../../home/programs/gui/helium/system.nix # I hate browser's configuration..
 
     # CHANGEME: You should probably remove those things:
