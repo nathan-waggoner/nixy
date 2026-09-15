@@ -3,7 +3,37 @@
     utility = {
       snacks-nvim = {
         setupOpts = {
-          picker.enabled = true;
+          picker = {
+            enabled = true;
+            formatters = {
+              file = {
+                filename_first = true;
+                truncate = 100;
+                icon_width = 2;
+                git_status_hl = true;
+              };
+            };
+            # layout = { preset = "dropdown", preview = false, layout = { width = 0.7 } };
+            sources = {
+              explorer = {
+                auto_close = true;
+                hidden = true;
+                ignored = true;
+                layout = "right";
+              };
+              files = {
+                hidden = true;
+              };
+              buffers = {
+                focus = "list";
+                hidden = true;
+                current = false;
+              };
+              grep = {
+                hidden = true;
+              };
+            };
+          };
           explorer.enabled = true;
         };
       };
@@ -14,11 +44,11 @@
         key = "<leader> ";
         mode = "n";
         silent = true;
-        action = "<cmd>lua Snacks.picker.smart()<cr>";
-        desc = "Smart Find Files";
+        action = "<cmd>lua Snacks.picker.buffers()<cr>";
+        desc = "Buffers";
       }
       {
-        key = "<leader>e";
+        key = "<C-n>";
         mode = "n";
         silent = true;
         action = "<cmd>lua Snacks.explorer()<cr>";
@@ -34,42 +64,28 @@
 
       # Find
       {
-        key = "<leader>fb";
-        mode = "n";
-        silent = true;
-        action = "<cmd>lua Snacks.picker.buffers()<cr>";
-        desc = "Buffers";
-      }
-      {
-        key = "<leader>ff";
+        key = "<leader>sf";
         mode = "n";
         silent = true;
         action = "<cmd>lua Snacks.picker.files()<cr>";
         desc = "Find Files";
       }
       {
-        key = "<leader>fp";
+        key = "<leader>sp";
         mode = "n";
         silent = true;
         action = "<cmd>lua Snacks.picker.projects()<cr>";
         desc = "Projects";
       }
       {
-        key = "<leader>fr";
-        mode = "n";
-        silent = true;
-        action = "<cmd>lua Snacks.picker.recent()<cr>";
-        desc = "Recent";
-      }
-      {
-        key = "<leader>f:";
+        key = "<leader>s:";
         mode = "n";
         silent = true;
         action = "<cmd>lua Snacks.picker.command_history()<cr>";
         desc = "Command History";
       }
       {
-        key = "<leader>fn";
+        key = "<leader>sn";
         mode = "n";
         silent = true;
         action = "<cmd>lua Snacks.picker.notifications()<cr>";

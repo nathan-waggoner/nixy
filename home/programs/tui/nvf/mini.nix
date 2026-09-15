@@ -21,7 +21,6 @@
         miniclue.gen_clues.registers(),
         miniclue.gen_clues.windows({ submode_resize = true }),
         miniclue.gen_clues.z(),
-        { mode = 'n', keys = '<Leader>f', desc = '+find' },
         { mode = 'n', keys = '<Leader>s', desc = '+search' },
         { mode = 'n', keys = '<Leader>t', desc = '+tools' },
         { mode = 'n', keys = '<Leader>u', desc = '+ui' },
@@ -36,55 +35,6 @@
 
   vim.mini = {
     ai.enable = true;
-    starter = {
-      enable = true;
-      setupOpts = {
-        header = ''
-          ⣟⣯⣟⣯⡇⠀⣿⢩⣛⡼⣏⠀⠈⠋⠀⣈⡷⣙⢎⡳⣙⢮⣙⢮⣙⢎⡳⣙⢾⣿
-          ⢿⡾⣽⡞⣷⣤⣏⡳⡜⡼⠗⠁⢀⠀⠙⢧⠳⣍⢞⡱⣭⠲⣍⠶⣩⢞⡱⡭⣾⣿
-          ⠈⠻⠧⢿⣧⣿⠶⣵⢻⢞⡷⢲⡟⡶⢴⡭⢿⣜⣮⡱⢎⡳⣍⢞⡱⢮⡱⣳⣿⣽
-          ⠀⣰⣶⡏⢷⣈⣿⣸⣇⣾⣸⣿⣾⣹⣆⡹⡎⡶⢇⡿⣹⢷⣾⣈⠷⣇⢷⣿⣿⣹
-          ⣾⣻⣭⣿⣾⣿⣿⣟⣿⣿⡿⣽⡿⣿⢿⣿⣿⣿⣾⣶⣵⣾⠲⣭⢳⣞⣾⡿⣷⣿
-          ⣿⣿⣿⣯⣷⣿⣿⠿⢝⠚⠋⠉⠉⠉⠙⠚⠛⡾⢿⣿⣻⣿⣿⣶⣏⠶⣩⠿⣿⡈
-          ⣿⣟⣿⣻⣿⡏⠀⠀⠀⠳⡀⠀⠀⠀⠀⠰⠊⠀⠀⠈⠙⠳⣿⣿⣿⣿⣧⣻⣿⣿
-          ⠘⢻⣿⣿⣽⡇⠈⠧⣄⠀⠀⠀⠀⠀⠀⢀⣄⡤⠴⠚⠀⠀⠀⠙⢿⣷⡿⣿⣿⣿
-          ⠀⠠⢈⢛⣿⠀⠚⠉⠉⠱⣼⡷⠀⠀⠀⠀⠉⠉⠑⠶⠀⠀⠀⠀⠀⠻⣿⣿⣾⢿
-          ⠀⠡⠈⠉⠹⡀⠀⠀⡄⠀⣸⡀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣿⣯⣿⢿
-          ⠀⠁⢶⣶⠀⢷⠀⠀⠉⠉⠀⠈⠉⠶⠆⠈⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⣿⣿⣾⣿
-          ⠀⠡⢸⢹⠏⡍⠓⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣺⡟⠋⠉⢹⢭⢣
-          ⠀⠀⢸⣹⡏⠭⠭⠭⠙⣲⣦⣤⣤⣀⣀⣀⣀⣤⣤⣶⣞⠉⠙⠛⠷⢀⣀⠘⣎⠧
-          ⢁⣈⣀⣀⢀⣀⣀⣀⣼⠟⠹⢿⣯⣟⣿⣻⡿⠿⠛⢿⣿⣦⡀⠀⠀⠀⠀⠉⠉⠘
-        '';
-        footer = "";
-        items = [
-          {
-            name = "files";
-            action = lib.mkLuaInline "function() Snacks.picker.files() end";
-            section = "";
-          }
-          {
-            name = "directories";
-            action = lib.mkLuaInline "function() Snacks.explorer() end";
-            section = "";
-          }
-          {
-            name = "tmp";
-            action = lib.mkLuaInline ''
-              function()
-                local uuid = vim.fn.system("uuidgen"):match("(%S+)")
-                vim.cmd("edit /tmp/" .. uuid .. ".md")
-              end
-            '';
-            section = "";
-          }
-          {
-            name = "recent";
-            action = lib.mkLuaInline "function() Snacks.picker.recent() end";
-            section = "";
-          }
-        ];
-      };
-    };
     comment.enable = true;
     icons.enable = true;
     indentscope.enable = true;
