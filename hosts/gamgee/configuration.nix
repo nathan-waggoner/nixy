@@ -7,6 +7,7 @@
     ../../nixos/fonts.nix
     ../../nixos/home-manager.nix
     ../../nixos/llama-cpp.nix
+    ../../nixos/llm-agents.nix
     ../../nixos/nix.nix
     ../../nixos/ssh.nix
     ../../nixos/systemd-boot.nix
