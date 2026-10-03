@@ -9,6 +9,7 @@
     pinta # Image editor
     onlyoffice-desktopeditors # Office suite
     blanket # Listen to different sounds
+    firefox
 
     # Backup
     thunar

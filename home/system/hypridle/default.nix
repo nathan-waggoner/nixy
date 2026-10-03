@@ -16,11 +16,12 @@
           timeout = 300; # 5 min → lock
           on-timeout = "loginctl lock-session";
         }
-        {
-          timeout = 360; # 6 min → screen off
-          on-timeout = "${pkgs.hyprland}/bin/hyprctl dispatch dpms off";
-          on-resume = "${pkgs.hyprland}/bin/hyprctl dispatch dpms on";
-        }
+        # TODO: Fix this so that when the screen turns back on, the keyboard has the corect focus
+        # {
+        #   timeout = 360; # 6 min → screen off
+        #   on-timeout = "${pkgs.hyprland}/bin/hyprctl dispatch dpms off";
+        #   on-resume = "${pkgs.hyprland}/bin/hyprctl dispatch dpms on";
+        # }
       ];
     };
   };
